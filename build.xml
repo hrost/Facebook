@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="test" default="exec" basedir=".">
+
+	<property name="src" value="./src" />
+	<property name="lib" value="./lib" />
+	<property name="bin" value="./bin" />
+	<property name="report" value="./report" />
+	<path id="test.classpath">
+		<pathelement location="${bin}" />
+		<fileset dir="${lib}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+	
+	<target name="init">
+		<delete dir="${bin}" />
+		<mkdir dir="${bin}" />
+	</target>
+	
+	<target name="compile" depends="init">
+		<javac source="1.6" srcdir="${src}" fork="true" destdir="${bin}" >
+			<classpath>
+				<pathelement path="${bin}">
+				</pathelement>
+				<fileset dir="${lib}">
+					<include name="**/*.jar" />
+				</fileset>
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="exec" depends="compile">
+		<delete dir="${report}" />
+		<mkdir dir="${report}" />
+			<mkdir dir="${report}/xml" />
+		<junit printsummary="yes" haltonfailure="no">
+			<classpath>
+				<pathelement location="${bin}" />
+				<fileset dir="${lib}">
+					<include name="**/*.jar" />
+				</fileset>
+			</classpath>
+
+			<test name="tests.TestSuite" haltonfailure="no" todir="${report}/xml" outfile="TEST-result">
+				<formatter type="xml" />
+			</test>
+		</junit>
+		<junitreport todir="${report}">
+			<fileset dir="${report}/xml">
+				<include name="TEST*.xml" />
+			</fileset>
+			<report format="frames" todir="${report}/html" />
+		</junitreport>
+	</target>
+</project>
