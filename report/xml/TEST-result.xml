@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="1" hostname="KBP1-DHP-017782" name="tests.TestSuite" skipped="0" tests="3" time="50.724" timestamp="2014-04-17T13:21:40">
+<testsuite errors="1" failures="1" hostname="KBP1-DHP-017782" name="tests.TestSuite" skipped="0" tests="3" time="67.828" timestamp="2014-04-22T15:28:33">
   <properties>
     <property name="ant.project.invoked-targets" value="exec" />
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
@@ -37,7 +37,7 @@
     <property name="ant.home" value="C:\Program Files (x86)\Apache Software Foundation\apache-ant-1.9.3" />
     <property name="ant.project.name" value="test" />
     <property name="sun.jnu.encoding" value="Cp1251" />
-    <property name="java.library.path" value="C:\Program Files (x86)\Java\jdk1.7.0_51\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;c:\Python27;c:\Python27\Lib\site-packages;c:\Python27\Scripts;c:\Python27\Lib\site-packages\selenium;C:\Program Files (x86)\Microsoft Team Foundation Server 2010 Power Tools\;C:\Program Files (x86)\Microsoft Team Foundation Server 2010 Power Tools\Best Practices Analyzer\;C:\Program Files (x86)\Java\jdk1.7.0_51\bin\; C:\Program Files\Java\jdk1.7.0_51\bin\;C:\Program Files (x86)\Apache Software Foundation\apache-ant-1.9.3\bin;;." />
+    <property name="java.library.path" value="C:\Program Files (x86)\Java\jdk1.7.0_51\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;c:\Python27;c:\Python27\Lib\site-packages;c:\Python27\Scripts;c:\Python27\Lib\site-packages\selenium;C:\Program Files (x86)\Microsoft Team Foundation Server 2010 Power Tools\;C:\Program Files (x86)\Microsoft Team Foundation Server 2010 Power Tools\Best Practices Analyzer\;C:\Program Files (x86)\Java\jdk1.7.0_51\bin\; C:\Program Files\Java\jdk1.7.0_51\bin\;C:\Program Files (x86)\Apache Software Foundation\apache-ant-1.9.3\bin;C:\Program Files (x86)\Apache Software Foundation\apache-maven-3.2.1\bin;;." />
     <property name="src" value="./src" />
     <property name="java.class.version" value="51.0" />
     <property name="java.specification.name" value="Java Platform API Specification" />
@@ -73,13 +73,45 @@
     <property name="sun.desktop" value="windows" />
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86" />
   </properties>
-  <testcase classname="tests.LoginTests" name="testLoginIn2" time="16.886" />
-  <testcase classname="tests.LoginTests" name="testLoginIn" time="15.129">
-    <failure message="expected:&lt;Mi[]hail&gt; but was:&lt;Mi[k]hail&gt;" type="junit.framework.ComparisonFailure">junit.framework.ComparisonFailure: expected:&lt;Mi[]hail&gt; but was:&lt;Mi[k]hail&gt;
+  <testcase classname="tests.LoginTests" name="testLoginIn2" time="33.419" />
+  <testcase classname="tests.LoginTests" name="testLoginIn" time="16.381">
+    <failure message="expected:&lt;Mi[hail]&gt; but was:&lt;Mi[khail!]&gt;" type="junit.framework.ComparisonFailure">junit.framework.ComparisonFailure: expected:&lt;Mi[hail]&gt; but was:&lt;Mi[khail!]&gt;
 	at tests.LoginTests.testLoginIn(Unknown Source)
 </failure>
   </testcase>
-  <testcase classname="tests.UserPageTests" name="testUserPageOpening" time="18.442" />
+  <testcase classname="tests.UserPageTests" name="testUserPageOpening" time="17.639">
+    <error message="Error communicating with the remote browser. It may have died.&#xa;Build info: version: &apos;2.39.0&apos;, revision: &apos;ff23eac&apos;, time: &apos;2013-12-16 16:12:12&apos;&#xa;System info: host: &apos;KBP1-DHP-017782&apos;, ip: &apos;172.22.79.10&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_51&apos;&#xa;Driver info: driver.version: RemoteWebDriver" type="org.openqa.selenium.remote.UnreachableBrowserException">org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: &apos;2.39.0&apos;, revision: &apos;ff23eac&apos;, time: &apos;2013-12-16 16:12:12&apos;
+System info: host: &apos;KBP1-DHP-017782&apos;, ip: &apos;172.22.79.10&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_51&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:276)
+	at tests.GenerelTest.setUp(Unknown Source)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:117)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:178)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:131)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
+	at org.openqa.selenium.remote.HttpCommandExecutor.fallBackExecute(HttpCommandExecutor.java:337)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:298)
+	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:165)
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:366)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527)
+</error>
+  </testcase>
   <system-out><![CDATA[
 Test Case Name = testLoginIn2
 
@@ -94,10 +126,6 @@ Home Page initialized!
 Get user name on Navbar. User name = Mihail
 
 Test Case Name = testUserPageOpening
-
-Login page is initialized
-Home Page initialized!
-User Page initialized!
 
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
