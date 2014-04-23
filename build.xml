@@ -41,7 +41,7 @@
 				</fileset>
 			</classpath>
 
-			<test name="Facebook Test Suite" classname = "tests.TestSuite" haltonfailure="no" todir="${report}/xml" outfile="TEST-result">
+			<test name="tests.TestSuite" haltonfailure="no" todir="${report}/xml" outfile="TEST-result">
 				<formatter type="xml" />
 			</test>
 		</junit>
