@@ -18,7 +18,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 public class GenerelTest extends TestCase{
 	
 	WebDriver driver;
-	String browser = "ff";
+	String browser = "chrome";
 	static int count = 1;
 	
 	@BeforeClass
@@ -29,6 +29,7 @@ public class GenerelTest extends TestCase{
 		count++;
 		
 		if (browser == "chrome") {
+			System.setProperty("webdriver.chrome.driver", "D://Java/chromedriver.exe");
 			driver = new ChromeDriver(); 
 			}
 		else if (browser == "ff") {
