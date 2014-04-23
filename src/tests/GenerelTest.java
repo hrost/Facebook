@@ -19,12 +19,14 @@ public class GenerelTest extends TestCase{
 	
 	WebDriver driver;
 	String browser = "ff";
+	static int count = 1;
 	
 	@BeforeClass
 	public void setUp() {
 		System.out.println("");
-		System.out.println("Test Case Name = " + this.getName());
+		System.out.println(count + ". Test Case Name = " + this.getName());
 		System.out.println("");
+		count++;
 		
 		if (browser == "chrome") {
 			driver = new ChromeDriver(); 
