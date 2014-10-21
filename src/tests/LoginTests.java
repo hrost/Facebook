@@ -11,7 +11,7 @@ public class LoginTests extends GenerelTest{
 	@Test
 	public void testLoginIn() {
 		String login = "hrost@bigmir.net";
-		String password = "hpdv9000";
+		String password = "*******";
 		
 		LoginPage loginPage = new LoginPage(driver);
 		HomePage homePage = loginPage.loginWithValidCredantials(login, password);
@@ -22,7 +22,7 @@ public class LoginTests extends GenerelTest{
 	@Test
 	public void testLoginIn2() {
 		String login = "hrost@bigmir.net";
-		String password = "hpdv9000";
+		String password = "*******";
 		
 		LoginPage loginPage = new LoginPage(driver);
 		HomePage homePage = loginPage.loginWithValidCredantials(login, password);
